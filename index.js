@@ -1,9 +1,8 @@
-const { use } = require("chai");
 const express = require("express");
 const app = express();
 const utils = require("./utils/task-schema.js");
 
-app.use(expresss.jsons());
+app.use(express.json());
 
 const tasks = [
   {
@@ -37,3 +36,7 @@ app.get("/api/tasks", (request, response) => {
 // PATCH 
 
 // DELETE 
+
+
+const port = process.env.PORT || 3000;
+module.exports = app.listen(port, () => console.log(`Listening on port ${port}...`));
