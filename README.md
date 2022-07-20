@@ -1,9 +1,11 @@
-# Writing Unit Tests
+# Writing Unit Tests & Practicing Test Driven Development
 ## For Task API
 
 Testing API using Mocha Chai
+
 Only the first GET method is written
-TODO: Write the rest of the RESTFUL API using TDD
+
+TODO: Write the rest of the RESTFUL API using TDD (Test Driven Development)
 
 ## Source Code
 https://gitlab.com/pragmaticreviews/node-mocha-chai/-/blob/master/index.js
