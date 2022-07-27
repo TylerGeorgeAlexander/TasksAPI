@@ -28,15 +28,25 @@ app.get("/api/tasks", (request, response) => {
 });
 
 // GET (by id)
-    
-// POST 
+app.get("/api/tasks/:id"),
+  (request, response) => {
+    const taskId = request.params.id;
+    const task = tasks.find((task) => task.id === parseInt(taskId));
+    if (!task)
+      return response
+        .status(404)
+        .send("The task with the provided ID does not exist.");
+    response.send(task);
+  };
+// POST
 
-// PUT 
+// PUT
 
-// PATCH 
+// PATCH
 
-// DELETE 
-
+// DELETE
 
 const port = process.env.PORT || 3000;
-module.exports = app.listen(port, () => console.log(`Listening on port ${port}...`));
+module.exports = app.listen(port, () =>
+  console.log(`Listening on port ${port}...`)
+);
