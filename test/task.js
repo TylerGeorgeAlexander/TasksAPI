@@ -121,7 +121,7 @@ describe("Tasks API", () => {
           response.should.have.status(200);
           response.body.should.be.a("object");
           response.body.should.have.property("id").eq(1);
-          response.body.should.have.propery("name").eq("Task 1 changed");
+          response.body.should.have.property("name").eq("Task 1 changed");
           response.body.should.have.property("completed").eq(true);
           done();
         });
@@ -161,7 +161,7 @@ describe("Tasks API", () => {
           response.should.have.status(200);
           response.body.should.be.a("object");
           response.body.should.have.property("id").eq(1);
-          response.body.should.have.propery("name").eq("Task 1 patch");
+          response.body.should.have.property("name").eq("Task 1 patch");
           response.body.should.have.property("completed").eq(true);
           done();
         });
