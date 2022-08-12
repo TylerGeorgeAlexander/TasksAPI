@@ -58,7 +58,26 @@ app.post("/api/tasks", (request, response) => {
 });
 
 // PUT
+app.put("/api/tasks/:id", (request, response) => {
+  const taskId = request.params.id;
+  const task = tasks.find((task) => task.id === parseInt(taskId));
+  if (!task)
+    return response
+      .status(404)
+      .send("The task with the provided ID does not exist.");
 
+  const { error } = utils.validateTask(request.body);
+
+  if (error)
+    return response
+      .status(400)
+      .send("The name should be at least 3 chars long!");
+
+  task.name = request.body.name;
+  task.completed = request.body.completed;
+
+  response.send(task);
+});
 // PATCH
 
 // DELETE
