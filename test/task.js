@@ -65,6 +65,7 @@ describe("Tasks API", () => {
         });
     });
   });
+
   // Test the POST route
   describe("POST /api/tasks", () => {
     it("It should POST a new task", (done) => {
@@ -80,7 +81,7 @@ describe("Tasks API", () => {
           response.should.have.status(201);
           response.body.should.be.a("object");
           response.body.should.have.property("id").eq(4);
-          response.body.should.have.propery("name").eq("Task 4");
+          response.body.should.have.property("name").eq("Task 4");
           response.body.should.have.property("completed").eq(false);
           done();
         });
