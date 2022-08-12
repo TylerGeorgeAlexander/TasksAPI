@@ -39,6 +39,23 @@ app.get("/api/tasks/:id", (request, response) => {
   response.send(task);
 });
 // POST
+app.post("/api/tasks", (request, response) => {
+  const { error } = utils.validateTask(request.body);
+
+  if (error)
+    return response
+      .status(400)
+      .send("The name should be at least 3 chars long!");
+
+  const task = {
+    id: tasks.length + 1,
+    name: request.body.name,
+    completed: request.body.completed,
+  };
+
+  tasks.push(task);
+  response.status(201).send(task);
+});
 
 // PUT
 
