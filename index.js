@@ -28,7 +28,13 @@ app.get("/api/tasks", (request, response) => {
 });
 
 // GET (by id)
-    
+app.get("/api/tasks/:id" , (request, response) => {
+  const taskId = request.params.id;
+  const task = tasks.find(task => task.id === parseInt(taskId));
+  if(!task) return response.status(404).send("The task with the provided ID does not exist.");
+  response.send(task);
+})
+
 // POST 
 
 // PUT 
