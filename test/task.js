@@ -44,7 +44,7 @@ describe("Tasks API", () => {
           response.should.have.status(200);
           response.body.should.be.a("object");
           response.body.should.have.property("id");
-          response.body.should.have.propery("name");
+          response.body.should.have.property("name");
           response.body.should.have.property("completed");
           response.body.should.have.property("id").eq(1);
           done();
